@@ -216,7 +216,6 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 ```
 
 
-
 #### Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>JS String Prototype Split</a>
@@ -225,6 +224,28 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 *   <a>String.length</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-tolowercase/15948' target='_blank' rel='nofollow'>JS String Prototype ToLowerCase</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>JS Array Prototype Join</a>
+
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:")
+Advanced Code Solution Alternative 3:
+
+
+function myReplace(str, before, after) {
+
+ 
+  return /\b[A-Z].*?\b/.test(before) ? str.replace(before,after.charAt(0).toUpperCase() + after.slice(1)) : str.replace(before, after)
+  
+}
+
+
+myReplace("A quick brown fox jumped over the lazy dog", "Jumped", "leaped");
+
+### Code Explanation:
+
+*   Using a ternary conditional operator the function first tests if the before argument starts with a capital letter as the boolean expression
+*   If true, replace() takes the before argument and replaces it with the after argument having the first letter, charAt(0), made into uppercase which will just return the first letter. Next, append the rest of the word by slicing the after argument starting from index (1). the after arugument is now with the first letter capitalized.
+*   If false, a normal replace will occur
+
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
